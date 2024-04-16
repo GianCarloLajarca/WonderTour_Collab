@@ -7,6 +7,7 @@
     --secondary: #01b3a7;
     --accent: #50ba87;
 
+
 }
 
 //primary
@@ -18,34 +19,12 @@ $clr-secondary: var(--secondary);
 $clr-accent: var(--accent);
 
 
-$clr-primary: #fff;
-$clr-accent: #01b3a7;
-$clr-light: #fff;
-$clr-dark: #000;
-$clr-gray: #e1e1e1;
-$clr-star: #ffcc00;
-$clr-grey: #d5d4d5;
-$clr-dark-accent: #016760;
-$clr-dark-blue: #162e44;
 
-
-$sm: "576px";
-$md: "768px";
-$lg: "992px";
-$xl: "1200px";
-$xxl: "1600px";
-$xxxl: "1669px";
-
-
-// saavedra breakpoints 
 //breakpoints
-$sm_saavedra: "50rem";
-$md_saavedra: "75.5rem";
-$laptop_saavedra: "102.4rem";
+$sm: "50rem";
+$md: "75.5rem";
+$laptop: "102.4rem";
 
-$lg_saavedra: "144rem";
-$xl_saavedra: "180rem";
-
-
-
+$lg: "144rem";
+$xl: "180rem";
 
