@@ -291,11 +291,15 @@
             height: 6rem;
             width: 16rem;
             cursor: pointer;
+            
+          
+            border-radius: 0;
 
           
-        
-        
-            @include flex(center,center);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
 
             transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
             position: relative;
