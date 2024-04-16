@@ -1,6 +1,4 @@
-@use 'colors' as *; 
-
-// SAAVEDRA
+@use './colors' as *;
 @mixin imgCover($ht:1px, $wd:100%){
     height: $ht;
     width: $wd;
@@ -8,7 +6,6 @@
     filter: brightness(50%);
 
 }
-
 @mixin centerImg{
     display: block;
     margin-left: auto;
@@ -41,161 +38,80 @@
     padding:0 1.6rem;
     margin: 2rem auto;
 }
-
-
-// SAAAVEDRA BREAKPOINTS MEDIA QUERY
-@mixin  mediaQuery($m-width:$sm_saavedra){
+@mixin  mediaQueryVS($m-width:$sm){
+    @media (max-width:$m-width){
+        @content;
+    }
+}
+@mixin  mediaQuery($m-width:$sm){
     @media (min-width:$m-width){
         @content;
     }
 }
-@mixin  mediaQueryT2P($m-width:$sm_saavedra){
+@mixin  mediaQueryT2P($m-width:$sm){
     @media (max-width:$m-width){
         @content;
     }
 }
-@mixin  mediaQueryD2T($m-width:$md_saavedra){
+@mixin  mediaQueryD2T($m-width:$md){
     @media (max-width:$m-width){
         @content;
     }
 }
 
-@mixin  mediaQuerySL($m-width:$laptop_saavedra){
+@mixin  mediaQuerySL($m-width:$laptop){
     @media (max-width:$m-width){
         @content;
     }
 }
-@mixin  mediaQueryLL($m-width:$lg_saavedra){
+@mixin  mediaQueryLL($m-width:$laptop){
     @media (min-width:$m-width){
         @content;
     }
 }
 
-// XL
-@mixin mediaQuery__xl($width:$xl) {
-    @media (min-width:$width) {
-        @content;
-    }
-}
-
-// XXL
-@mixin mediaQuery__xxl($width:$xxl) {
-    @media (min-width:$width) {
-        @content;
-    }
-}
-
-// LG
-@mixin mediaQuery__lg($width:$lg) {
-    @media (min-width:$width) {
-        @content;
-    }
-}
-
-// MD
-@mixin mediaQuery__md($width:$md) {
-    @media (min-width:$width) {
-        @content;
-    }
-}
-
-// SM
-@mixin mediaQuery__sm($width:$sm) {
-    @media (min-width:$width) {
-        @content;
-    }
-}
-
-// XXXL
-@mixin mediaQuery__xxxl($width:$xxxl) {
-    @media (min-width:$width) {
-        @content;
-    }
-}
-
-
-
-// own utility for desktop first
-// SM
-@mixin mediaQueryMax__sm($width:$sm) {
-    @media (max-width:$width) {
-        @content;
-    }
-}
-
-// XL
-@mixin mediaQueryMax__xl($width:$xl) {
-    @media (max-width:$width) {
-        @content;
-    }
-}
-
-// XXXL
-@mixin mediaQueryMax__xxxl($width:$xxxl) {
-    @media (max-width:$width) {
-        @content;
-    }
-}
-
-// XXL
-@mixin mediaQueryMax__xxl($width:$xxl) {
-    @media (max-width:$width) {
-        @content;
-    }
-}
-
-// LG
-@mixin mediaQueryMax__lg($width:$lg) {
-    @media (max-width:$width) {
-        @content;
-    }
-}
-
-// MD
-@mixin mediaQueryMax__md($width:$md) {
-    @media (max-width:$width) {
-        @content;
-    }
-}
-
-
-
-@mixin grid($cols: 1, $gap:1rem) {
+// even grid
+@mixin grid($cols: 1, $gap:1rem){
     display: grid;
     grid-template-columns: repeat($cols, 1fr);
     grid-gap: $gap;
 }
 
-@mixin unevenGrid($val, $gap:1rem) {
+// un even grid
+@mixin unevenGrid($val: 1, $gap:1rem){
     display: grid;
     grid-template-columns: $val;
     grid-gap: $gap;
+    margin-bottom: 5rem;
 }
 
-
-
-@mixin absolute ($top:0,$right:0, $bottom:0,$left:0) {
+//mixin for bottom things
+@mixin absolute($top:0,$right:0,$bottom:0,$left:0){
     position: absolute;
-    top: $top;
-    left: $left;
-    bottom: $bottom;
-    right: $right;   
+    top:$top;
+    right:$right;
+    bottom:$bottom;
+    left:$left;
 }
-
-@mixin flex($justify:flex-start, $align: flex-start ) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-} 
 // mixin for banner:
 @mixin d-flex($justify:flex-start,$align:flex-start){
     display:flex;
     justify-content: $justify;
     align-items: $align;
 }
+@mixin px-var($px:auto){
+    padding-left: $px;
+    padding-right: $px;
+}
+@mixin py-var($py:0){
+    padding-top: $py;
+    padding-bottom: $py;
+}
+@mixin mx-auto($mx:auto){
+    margin: 0 $mx;
+}
 
 
-// SAAVEDRA
 // omega clamp:
 @mixin clamp($property, $min-size, $scaler, $max-size, $min-size-left:false, $scaler-left:false, $max-size-left:false){
     @if $min-size-left == false {
