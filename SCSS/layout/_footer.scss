@@ -88,7 +88,7 @@
     padding-bottom: 75px;
     padding-left: 0;
     padding-right: 0;
-    color: $clr-light;
+    color: #ffffff;
 
     .container {
         padding: 0 1.6rem;
@@ -190,7 +190,7 @@
        
        
         ul li span{
-            color: $clr-accent;
+            color: #01b3a7;
         
         }
         ul li {
@@ -198,7 +198,7 @@
             margin-right: 10px;
             margin-bottom: 6px;
             h5{
-              color: $clr-accent;
+              color: #01b3a7;
               font-weight: 350;
               font-size: 1.5rem;
               transition: all 0.3s ease-in-out;
@@ -210,7 +210,7 @@
     
             p{
                 font-size: 1.3rem;
-                color:gray;
+                color: #e1e1e1;
                 opacity: 50%;
                 margin-bottom: 26px;
     
@@ -257,11 +257,11 @@
 
                font-size: 14px;
                 &:hover{
-                    color: $clr-accent;
+                    color: #01b3a7;
                 }
             }
             li::before {
-                background: $clr-accent;
+                background: #01b3a7;
                 height: .8rem;
                 width: .8rem;
                 margin-right: 8px;
@@ -283,8 +283,8 @@
             }
             display: inline-block;
             z-index: 999999;
-            color: $clr-light;
-            background: $clr-accent;
+            color: #ffffff;
+            background: #01b3a7;
             border:none;
             margin: 3rem auto;
             font-size: 1.8rem;
@@ -384,7 +384,7 @@
         order:1;
        }
 
-       color: $clr-gray;
+       color: #e1e1e1;
         }
         .p3{
             cursor: pointer;
@@ -394,7 +394,7 @@
             opacity: 100%;  
             }
 
-            color: $clr-gray;
+            color: #e1e1e1;
             
         }
        @include mediaQuery__lg{
