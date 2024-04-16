@@ -1,0 +1,215 @@
+@use 'colors' as *; 
+
+// SAAVEDRA
+@mixin imgCover($ht:1px, $wd:100%){
+    height: $ht;
+    width: $wd;
+    object-fit: cover;
+    filter: brightness(50%);
+
+}
+
+@mixin centerImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+    height: auto;
+}
+@mixin centerImgFaceright{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+@mixin centerImgReset{
+    display: unset;
+    margin-left: auto;
+    margin-right: auto;
+    width: unset;
+}
+@mixin imgCoverB($ht:1px, $wd:1px){
+    height: $ht;
+    width: $wd;
+    object-fit: cover;
+    filter: brightness(100%);
+
+}
+@mixin roundedContainer($clr: $clr-light){
+    max-width:180rem;
+    padding:0 1.6rem;
+    margin: 2rem auto;
+}
+
+
+// SAAAVEDRA BREAKPOINTS MEDIA QUERY
+@mixin  mediaQuery($m-width:$sm_saavedra){
+    @media (min-width:$m-width){
+        @content;
+    }
+}
+@mixin  mediaQueryT2P($m-width:$sm_saavedra){
+    @media (max-width:$m-width){
+        @content;
+    }
+}
+@mixin  mediaQueryD2T($m-width:$md_saavedra){
+    @media (max-width:$m-width){
+        @content;
+    }
+}
+
+@mixin  mediaQuerySL($m-width:$laptop_saavedra){
+    @media (max-width:$m-width){
+        @content;
+    }
+}
+@mixin  mediaQueryLL($m-width:$lg_saavedra){
+    @media (min-width:$m-width){
+        @content;
+    }
+}
+
+// XL
+@mixin mediaQuery__xl($width:$xl) {
+    @media (min-width:$width) {
+        @content;
+    }
+}
+
+// XXL
+@mixin mediaQuery__xxl($width:$xxl) {
+    @media (min-width:$width) {
+        @content;
+    }
+}
+
+// LG
+@mixin mediaQuery__lg($width:$lg) {
+    @media (min-width:$width) {
+        @content;
+    }
+}
+
+// MD
+@mixin mediaQuery__md($width:$md) {
+    @media (min-width:$width) {
+        @content;
+    }
+}
+
+// SM
+@mixin mediaQuery__sm($width:$sm) {
+    @media (min-width:$width) {
+        @content;
+    }
+}
+
+// XXXL
+@mixin mediaQuery__xxxl($width:$xxxl) {
+    @media (min-width:$width) {
+        @content;
+    }
+}
+
+
+
+// own utility for desktop first
+// SM
+@mixin mediaQueryMax__sm($width:$sm) {
+    @media (max-width:$width) {
+        @content;
+    }
+}
+
+// XL
+@mixin mediaQueryMax__xl($width:$xl) {
+    @media (max-width:$width) {
+        @content;
+    }
+}
+
+// XXXL
+@mixin mediaQueryMax__xxxl($width:$xxxl) {
+    @media (max-width:$width) {
+        @content;
+    }
+}
+
+// XXL
+@mixin mediaQueryMax__xxl($width:$xxl) {
+    @media (max-width:$width) {
+        @content;
+    }
+}
+
+// LG
+@mixin mediaQueryMax__lg($width:$lg) {
+    @media (max-width:$width) {
+        @content;
+    }
+}
+
+// MD
+@mixin mediaQueryMax__md($width:$md) {
+    @media (max-width:$width) {
+        @content;
+    }
+}
+
+
+
+@mixin grid($cols: 1, $gap:1rem) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    grid-gap: $gap;
+}
+
+@mixin unevenGrid($val, $gap:1rem) {
+    display: grid;
+    grid-template-columns: $val;
+    grid-gap: $gap;
+}
+
+
+
+@mixin absolute ($top:0,$right:0, $bottom:0,$left:0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;   
+}
+
+@mixin flex($justify:flex-start, $align: flex-start ) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+} 
+// mixin for banner:
+@mixin d-flex($justify:flex-start,$align:flex-start){
+    display:flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+// SAAVEDRA
+// omega clamp:
+@mixin clamp($property, $min-size, $scaler, $max-size, $min-size-left:false, $scaler-left:false, $max-size-left:false){
+    @if $min-size-left == false {
+      #{$property}:$max-size; 
+      #{$property}:#{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"}; 
+      #{$property}:clamp($min-size, $scaler, $max-size);
+    } @else if $min-size-left == 0 or $min-size-left == auto{
+      #{$property}:$max-size $min-size-left; 
+      #{$property}:#{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"} $min-size-left;
+      #{$property}:clamp($min-size, $scaler, $max-size) $min-size-left;
+    } @else {
+      #{$property}:$max-size $min-size-left; 
+      #{$property}:#{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"} #{"min(max(#{$min-size-left}, #{$scaler-left}), #{$max-size-left})"}; 
+      #{$property}:clamp($min-size, $scaler, $max-size) clamp($min-size-left, $scaler-left, $max-size-left);
+    }
+  }
+//   fade in css:
